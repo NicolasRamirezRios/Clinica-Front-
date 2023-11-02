@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class LoginEmpleadoComponent {
 
+	tipoUsr: string = '';
+	setTipoUsuario(tipo: string) {
+		this.tipoUsr = tipo;
+	}
+
 }

@@ -9,25 +9,32 @@
     
         <h1 style="margin-top: 50px; text-align: center; margin-bottom: 30px">Iniciar Sesión</h1>
         <div style="text-align: center;margin: auto; width: 400px;">
-            <input class="btn btn-light" type="submit" name="loginAdmin" id="mostrarFormulario1" value="Administrador"/>
-            <input class="btn btn-light" type="submit" name="loginAdmin" id="mostrarFormulario2" value="Médico"/>
+            <input (click)="setTipoUsuario('administrador')"class="btn btn-light" type="submit" name="loginAdmin" id="mostrarFormulario1" value="Administrador"/>
+            <input (click)="setTipoUsuario('medico')" class="btn btn-light" type="submit" name="loginAdmin" id="mostrarFormulario2" value="Médico"/>
         </div>
 
         <div class="d-grid gap-2 d-md-block mb-3" style="text-align: center;margin: auto; width: 400px;margin-top: 40px">
             <div  id="formulario1" style="border: 2px solid rgba(0,0,0,0.06);border-radius: 10px; padding: 20px;">
-                <form style="text-align: center;">
-                    <label for="Email">Email</label>
-                    <input type="text" name="Email" id="Email" required class="form-control"/>
+                    <span *ngIf="tipoUsr==='administrador'">
+
+			    <form style="text-align: center;">
+				    <label for="Email">Email</label>
+				    <input type="text" name="Email" id="Email" required class="form-control"/>
     
-                    <label for="contrasena">Contraseña</label>
-                    <input type="text" name="Contrasena" id="contrasenaAdmin" required class="form-control"/>
+				    <label for="contrasena">Contraseña</label>
+				    <input type="text" name="Contrasena" id="contrasenaAdmin" required class="form-control"/>
     
-                    <div style="margin-top: 10px;">
-                        <input style="border-radius: 20px;" class="btn btn-primary" type="submit" name="login" id="loginAdmin" value="Iniciar Sesión"/>
-                    </div>
-    
-    
-                </form>
+				    <div style="margin-top: 10px;">
+					    <input style="border-radius: 20px;" class="btn btn-primary" type="submit" name="login" id="loginAdmin" value="Iniciar Sesión"/>
+				    </div>
+
+
+			    </form>
+                        </span>
+                    <span *ngIf="tipoUsr==='medico'">
+			    <p>formulario medico</p>
+                        </span>
+
             </div>
         </div>
     
