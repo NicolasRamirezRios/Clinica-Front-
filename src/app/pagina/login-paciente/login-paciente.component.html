@@ -6,29 +6,33 @@ width:600px;
 margin-top:-200px;">
     <h1 style="text-align: center;"> Iniciar Sesión</h1>
     <h5 style="text-align: center;"> Afiliado</h5>
-    <br/>
+    <br />
 
     <div class="d-grid gap-2 d-md-block mb-3" style="text-align: center;margin: auto; width: 400px;">
-        <form style="text-align: center;border: 2px solid rgba(0,0,0,0.06);border-radius: 10px; padding: 20px;" th:action="@{/loginAfiliado}" method="post" >
-            <label for="cedula">Numero de Identificación</label>
-            <input type="text" name="cedula" id="cedula" required class="form-control"/>
-
-            <label for="contrasena">Contraseña</label>
-            <input type="text" name="Contrasena" id="contrasena" required class="form-control"/>
+        <form [formGroup]="formularioPaciente" (ngSubmit)="loginPaciente($event)" style="text-align: center;border: 2px solid rgba(0,0,0,0.06);border-radius: 10px; padding: 20px;">
+            <label>Numero de Identificación</label>
+            <input type="number" formControlName="Cedula" class="form-control"  />
+            <div *ngIf="cedulaPaciente!.errors && cedulaPaciente!.touched">
+                <p *ngIf="cedulaPaciente!.hasError('max')">
+                    Maximo son 10 digitos
+                </p>
+              </div>
+            <label>Contraseña</label>
+            <input type="password" formControlName="Contrasena"  class="form-control" />
 
             <div style="margin-top: 30px">
 
-                <a style="text-decoration: none;margin-right: 145px;" href="@{/}">¿Has olvidado tu contraseña?</a>
-
+    
                 <div style="position: absolute; top: 280px">
-                <input style="border-radius: 20px;margin-left: 240px;" class="btn btn-primary" type="submit" name="login" id="loginAfiliado" value="Iniciar Sesión"/>
+                    <input style="border-radius: 20px;margin-left: 120px;" class="btn btn-primary" type="submit"
+                        name="login" id="loginAfiliado" value="Iniciar Sesión"> 
                 </div>
             </div>
 
 
-            <div style="margin-top: 35px;">
+            <div style="margin-top: 100px;">
                 <h5>¿Aún no tienes una cuenta?</h5>
-                <a style="text-decoration: none;" href="RegistroPaciente.html" >Crear Cuenta</a>
+                <a style="text-decoration: none;" href="RegistroPaciente.html">Crear Cuenta</a>
             </div>
 
 
@@ -37,5 +41,3 @@ margin-top:-200px;">
 
     </div>
 </div>
-<router-outlet></router-outlet>
-

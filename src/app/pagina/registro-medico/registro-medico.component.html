@@ -1,0 +1,46 @@
+<div style="position:absolute;
+top: 40%;
+left: 26%;
+height:400px;
+width:600px;
+margin-top:-240px;text-align: center;
+">
+    <h1>Registro Medico</h1>
+    <div class="d-grid gap-2 d-md-block mb-3" style="text-align: left;margin: auto; width: 400px;">
+
+        <form style="text-align: center;border: 2px solid rgba(0,0,0,0.06);border-radius: 10px; padding: 20px;"
+              th:action="@{/loginAfiliado}" method="post">
+
+            <input type="text" placeholder="Nombre Completo" name="nombreCompleto" id="nombreCompleto" required
+                   class="form-control"/>
+
+            <input style="margin-top: 30px" type="text" placeholder="Numero de Identificación" name="cedula" id="cedula"
+                   required
+                   class="form-control"/>
+
+            <input style="margin-top: 30px" type="text" placeholder="Teléfono" name="telefono" id="telefono" required
+                   class="form-control"/>
+
+
+            <input style="margin-top: 30px" type="text" placeholder="Email" name="email" id="email" required
+                   class="form-control"/>
+
+            <div style="margin-top: 30px">
+                <select class="form-select" aria-label="Especialidad" id="especialidad" name="especialidad" required>
+                    <option selected>Seleccione su especialidad</option>
+                    <option >100567 - Optometria </option>
+                    <option >100102 - Fisioterapia</option>
+                    <option >100123 - Medico General </option>
+                </select>
+            </div>
+
+	    <label  style="margin-top: 30px; text-align: left; width: 100%" >Jornada</label>
+            <input style="margin-top: 5px" type="date"  name="di_libre" id="dia_libre"
+                   required class="form-control"/>
+            <div style="margin-top: 30px;">
+                <input style="border-radius: 20px;" class="btn btn-primary" type="submit" name="registro" id="registro"
+                       value="Enviar"/>
+            </div>
+        </form>
+    </div>
+</div>
