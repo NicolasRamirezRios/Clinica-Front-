@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+    
+</head>
+<body class="container mt-5">
+    <h2 class="mb-4">Agendamiento de cita</h2>
+    <form >
+        <label for="userType">Especialidad:</label>
+                <select class="form-control mb-3" 
+                        name="especialidad"
+                        [(ngModel)]="especialidad">
+                        <option hidden selected>Seleccione una especialidad</option>
+                        <option *ngFor="let especialidad of especializaciones"  >{{especialidad}}</option>
+                    
+                </select>
+                
+                <select *ngIf=" especialidad != 'Seleccione una especialidad'" 
+                        class="form-control mb-3" 
+                        name="medicos"
+                        [(ngModel)]="medico">
+                        <option hidden selected>Seleccione un medico</option>
+                        <option *ngFor="let medico of medicosPorEspecializacion[especialidad]"  >{{medico}}</option>
+                    
+                </select>
+
+        
+        <mat-form-field *ngIf="medico != 'Seleccione un medico'">
+            <input matInput [matDatepicker]="datepicker" 
+                            placeholder="Choose a date" 
+                            (dateChange)="onDateSelected($event)"
+                            [matDatepickerFilter]="dateFilter"
+                            name="fecha"
+                            [(ngModel)]="fechaCita"
+                            >
+            <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+            <mat-datepicker #datepicker></mat-datepicker>
+          </mat-form-field>
+
+          
+          <select *ngIf=" fechaCita != null" 
+                        class="form-control mb-3" 
+                        name="hora"
+                        [(ngModel)]="hora">
+                        <option hidden selected>Seleccione una hora</option>
+                        <option *ngFor="let hora of generarHoras()"  >{{hora}}</option>
+                    
+          </select>
+
+          <button *ngIf="hora != 'Seleccione una hora'" type="submit" class="btn btn-primary" > Agendar Cita </button> 
+    </form>
+</body>
+</html>

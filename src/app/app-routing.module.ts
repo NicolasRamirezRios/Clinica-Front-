@@ -6,9 +6,11 @@ import { LoginPacienteComponent } from './pagina/login-paciente/login-paciente.c
 import { RegistroPacienteComponent } from './pagina/registro-paciente/registro-paciente.component';
 import { RegistroMedicoComponent } from './pagina/registro-medico/registro-medico.component';
 import { AgendarCitaComponent } from './pagina/agendar-cita/agendar-cita.component';
+import { CalendarioComponent } from './calendario/calendario.component';
 
 const routes: Routes = [
 { path: "", component: InicioComponent },
+{ path: "agendarCita", component: CalendarioComponent },
 { path: "loginEmpleado", component: LoginEmpleadoComponent },
 { path: "loginPaciente", component: LoginPacienteComponent },
 { path: "registroPaciente", component: RegistroPacienteComponent },
