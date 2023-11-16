@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { DateFilterFn, MatDatepickerInputEvent } from '@angular/material/datepicker';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 interface MedicosPorEspecializacion {
   [key: string]: string[];
@@ -16,6 +18,9 @@ interface FechasOcupadas {
 })
 export class CalendarioComponent {
 
+
+  constructor( private route: Router){}
+  
   especializaciones = ["Optometra", "Medico General", "Pediatra", "Odontologa"]
 
   medicosPorEspecializacion: MedicosPorEspecializacion = {
@@ -74,4 +79,20 @@ export class CalendarioComponent {
 onDateSelected(event: MatDatepickerInputEvent<Date>) {
   console.log(event.value); // This will give you the selected date
 }
+
+      mostrarMensaje(titulo:string, mensaje:string, tipo:string){
+        Swal.fire({
+          title: titulo,
+          text: mensaje,
+          icon: "success"
+        }).then( (ok)=>{
+          if ( ok ) this.route.navigate(["/"]);
+        });
+
+
+      }
+
+      popupExitoso(){
+        this.mostrarMensaje("Agendamiento exitoso", "Su agendamiento ha sido exitoso", "success")
+      }
 }
