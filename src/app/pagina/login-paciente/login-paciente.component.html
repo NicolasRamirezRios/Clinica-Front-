@@ -1,46 +1,66 @@
+<div
+  style="
+    position: absolute;
+    top: 55%;
+    left: 25%;
+    height: 400px;
+    width: 600px;
+    margin-top: -200px;
+  "
+>
+  <h1 style="text-align: center">Iniciar Sesión</h1>
+  <h5 style="text-align: center">Afiliado</h5>
+  <br />
 
+  <div
+    class="d-grid gap-2 d-md-block mb-3"
+    style="text-align: center; margin: auto; width: 400px"
+  >
+    <form
+      [formGroup]="formularioPaciente"
+      (ngSubmit)="loginPaciente($event)"
+      style="
+        text-align: center;
+        border: 2px solid rgba(0, 0, 0, 0.06);
+        border-radius: 10px;
+        padding: 20px;
+      "
+    >
+      <label>Numero de Identificación</label>
+      <input type="number" formControlName="Cedula" class="form-control" />
+      <div *ngIf="cedulaPaciente!.errors && cedulaPaciente!.touched">
+        <p *ngIf="cedulaPaciente!.hasError('max')" style="margin-bottom: 0px;">Maximo son 10 digitos</p>
+      </div>
 
-<div style="position:absolute;
-top: 55%;
-left: 25%;
-height:400px;
-width:600px;
-margin-top:-200px;">
-    <h1 style="text-align: center;"> Iniciar Sesión</h1>
-    <h5 style="text-align: center;"> Afiliado</h5>
-    <br />
+      <div style="margin-top: 5px;">
+      <label>Contraseña</label>
+      <input
+        type="password"
+        formControlName="Contrasena"
+        class="form-control"
+      />
+      </div>
 
-    <div class="d-grid gap-2 d-md-block mb-3" style="text-align: center;margin: auto; width: 400px;">
-        <form [formGroup]="formularioPaciente" (ngSubmit)="loginPaciente($event)" style="text-align: center;border: 2px solid rgba(0,0,0,0.06);border-radius: 10px; padding: 20px;">
-            <label>Numero de Identificación</label>
-            <input type="number" formControlName="Cedula" class="form-control"  />
-            <div *ngIf="cedulaPaciente!.errors && cedulaPaciente!.touched">
-                <p *ngIf="cedulaPaciente!.hasError('max')">
-                    Maximo son 10 digitos
-                </p>
-              </div>
-            <label>Contraseña</label>
-            <input type="password" formControlName="Contrasena"  class="form-control" />
+      
+        <div style="position: absolute; top: 290px">
+          <input
+            style="border-radius: 20px; margin-left: 120px"
+            class="btn btn-primary"
+            type="submit"
+            name="login"
+            id="loginAfiliado"
+            value="Iniciar Sesión"
+          />
+        </div>
+   
 
-            <div style="margin-top: 30px">
-
-    
-                <div style="position: absolute; top: 280px">
-                    <input style="border-radius: 20px;margin-left: 120px;" class="btn btn-primary" type="submit"
-                        name="login" id="loginAfiliado" value="Iniciar Sesión"> 
-                </div>
-            </div>
-
-
-            <div style="margin-top: 100px;">
-                <h5>¿Aún no tienes una cuenta?</h5>
-                <a style="text-decoration: none;" routerLink="/registroPaciente">Crear Cuenta</a>
-            </div>
-
-
-
-        </form>
-
-    </div>
+      <div style="margin-top: 100px">
+        <h5>¿Aún no tienes una cuenta?</h5>
+        <a style="text-decoration: none" routerLink="/registroPaciente"
+          >Crear Cuenta</a
+        >
+      </div>
+    </form>
+  </div>
 </div>
 <router-outlet></router-outlet>

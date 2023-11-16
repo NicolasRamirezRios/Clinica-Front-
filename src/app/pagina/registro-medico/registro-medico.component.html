@@ -16,13 +16,27 @@ margin-top:-240px;text-align: center;
             <input formControlName="NumeroIdentificacion" style="margin-top: 30px" type="text" placeholder="Numero de Identificación" name="cedula" id="cedula"
                    required
                    class="form-control"/>
+                   <div *ngIf="numeroIdentificacionRegistroMedico!.errors && numeroIdentificacionRegistroMedico?.touched">
+                    <p *ngIf="numeroIdentificacionRegistroMedico!.hasError('max')">
+                        El número de identificación no puede ser mayor a 10 digitos
+                    </p>
+                  </div>
 
             <input formControlName="Telefono" style="margin-top: 30px" type="text" placeholder="Teléfono" name="telefono" id="telefono" required
                    class="form-control"/>
-
+                   <div *ngIf="telefonoRegistroMedico!.errors && telefonoRegistroMedico?.touched">
+                    <p *ngIf="telefonoRegistroMedico!.hasError('max')">
+                        El número de telefono no puede ser mayor a 10 digitos
+                    </p>
+                  </div>
 
             <input formControlName="Email" style="margin-top: 30px" type="text" placeholder="Email" name="email" id="email" required
                    class="form-control"/>
+                   <div *ngIf="emailRegistroMedico!.errors && emailRegistroMedico?.touched">
+                    <p *ngIf="emailRegistroMedico!.hasError('email')">
+                        Ingrese un email valido
+                    </p>
+                  </div>
 
             <input formControlName="Contrasena" style="margin-top: 30px" type="text" placeholder="Contraseña" name="Contrasena" id="contrasena" class="form-control"/>
 

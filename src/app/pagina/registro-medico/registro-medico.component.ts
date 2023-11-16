@@ -36,19 +36,19 @@ export class RegistroMedicoComponent {
 		}
 	}
 
-	get emailRegistroPaciente() {
+	get emailRegistroMedico() {
     return this.formularioRegistroMedico.get('Email');
   }
 
-  get contrasenaRegistroPaciente() {
+  get contrasenaRegistroMedico() {
     return this.formularioRegistroMedico.get('Contrasena');
   } 
 
-  get nombreRegistroPaciente() {
+  get nombreRegistroMedico() {
     return this.formularioRegistroMedico.get('Nombre');
   }
 
-  get numeroIdentificacionRegistroPaciente() {
+  get numeroIdentificacionRegistroMedico() {
     return this.formularioRegistroMedico.get('NumeroIdentificacion');
   }
 
