@@ -6,7 +6,10 @@ import { LoginPacienteComponent } from './pagina/login-paciente/login-paciente.c
 import { RegistroPacienteComponent } from './pagina/registro-paciente/registro-paciente.component';
 import { RegistroMedicoComponent } from './pagina/registro-medico/registro-medico.component';
 import { AgendarCitaComponent } from './pagina/agendar-cita/agendar-cita.component';
-
+import { InicioPacienteComponent } from './pagina/inicio-paciente/inicio-paciente.component';
+import { InicioAdministradorComponent } from './pagina/inicio-administrador/inicio-administrador.component';
+import { InicioMedicoComponent } from './pagina/inicio-medico/inicio-medico.component';
+import { ActualizacionDatosComponent } from './pagina/actualizacion-datos/actualizacion-datos.component';
 const routes: Routes = [
 { path: "", component: InicioComponent },
 { path: "loginEmpleado", component: LoginEmpleadoComponent },
@@ -14,6 +17,10 @@ const routes: Routes = [
 { path: "registroPaciente", component: RegistroPacienteComponent },
 { path: "registroMedico", component: RegistroMedicoComponent },
 { path: "agendarCita", component: AgendarCitaComponent },
+{ path: "inicioPaciente", component: InicioPacienteComponent },
+{ path: "inicioAdministrador", component: InicioAdministradorComponent },
+{ path: "inicioMedico", component: InicioMedicoComponent },
+{ path: "actualizacionDatos", component: ActualizacionDatosComponent },
 { path: "**", pathMatch: "full", redirectTo: "" }
 ];
 @NgModule({

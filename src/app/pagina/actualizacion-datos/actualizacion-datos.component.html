@@ -1,36 +1,22 @@
-
 <div style="position:absolute;
 top: 55%;
 left: 26%;
 height:400px;
 width:600px;
-margin-top:-240px;
+margin-top:-240px;text-align: center;
 ">
-
+    <h1>Actualización de datos</h1>
     <div class="d-grid gap-2 d-md-block mb-3" style="text-align: left;margin: auto; width: 400px;">
-        <h1>Registro</h1>
-        <form [formGroup]="formularioRegistroPaciente" (ngSubmit)="registroPaciente($event)" style="text-align: center;border: 2px solid rgba(0,0,0,0.06);border-radius: 10px; padding: 20px;" method="post">
 
-            <input formControlName="Nombre" type="text" placeholder="Nombre Completo" name="nombreCompleto" id="nombreCompleto" required
-                   class="form-control"/>
-
-            <input formControlName="NumeroIdentificacion" style="margin-top: 30px" type="text" placeholder="Numero de Identificación" name="cedula" id="cedula"
-                   required
-                   class="form-control"/>
-                   <div *ngIf="numeroIdentificacionRegistroPaciente!.errors && numeroIdentificacionRegistroPaciente?.touched">
-                    <p *ngIf="numeroIdentificacionRegistroPaciente!.hasError('max')">
-                        El número de identificación no puede ser mayor a 10 digitos
-                    </p>
-                  </div>
+        <form [formGroup]="formularioActualizarPaciente" (ngSubmit)="actualizarPaciente($event)" style="text-align: center;border: 2px solid rgba(0,0,0,0.06);border-radius: 10px; padding: 20px;" method="post">
 
             <input formControlName="Telefono" style="margin-top: 30px" type="text" placeholder="Teléfono" name="telefono" id="telefono" required
                    class="form-control"/>
-                   <div *ngIf="telefonoRegistroPaciente!.errors && telefonoRegistroPaciente?.touched">
-                    <p *ngIf="telefonoRegistroPaciente!.hasError('max')">
+                   <div *ngIf="telefonoActualizarPaciente!.errors && telefonoActualizarPaciente?.touched">
+                    <p *ngIf="telefonoActualizarPaciente!.hasError('max')">
                         El número de teelfono no puede ser mayor a 10 digitos
                     </p>
                   </div>
-
 
             <div style="margin-top: 30px">
                 <select formControlName="ciudad"  class="form-select" aria-label="Ciudad" id="ciudad" name="ciudad">
@@ -48,8 +34,8 @@ margin-top:-240px;
 
             <input formControlName="Email" style="margin-top: 30px" type="text" placeholder="Email" name="email" id="email" required
                    class="form-control"/>
-                   <div *ngIf="emailRegistroPaciente!.errors && emailRegistroPaciente?.touched">
-                    <p *ngIf="emailRegistroPaciente!.hasError('email')">
+                   <div *ngIf="emailActualizarPaciente!.errors && emailActualizarPaciente?.touched">
+                    <p *ngIf="emailActualizarPaciente!.hasError('email')">
                         Ingrese un email valido
                     </p>
                   </div>
@@ -64,30 +50,14 @@ margin-top:-240px;
             </div>
 
             <div class="mb-3">
-                <label for="fecha_nacimiento">Fecha de nacimiento</label>
-                <input formControlName="FechaNacimiento" type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento" required>
-            </div>
-            <div class="mb-3">
                 <input formControlName="Alergias" type="text" placeholder="Alergias" class="form-control" id="alergias" name="alergias" required>
             </div>
-            <div *ngIf="alergiasRegistroPaciente!.errors && alergiasRegistroPaciente?.touched">
-                <p *ngIf="alergiasRegistroPaciente!.hasError('maxLength')">
+            <div *ngIf="alergiasActualizarPaciente!.errors && alergiasActualizarPaciente?.touched">
+                <p *ngIf="alergiasActualizarPaciente!.hasError('maxLength')">
                     El campo alergias no puede tener mas de 100 caracteres
                 </p>
               </div>
-            <div class="mb-3">
-                <select formControlName="TipoSangre" class="form-select" id="tipo_sangre" name="tipo_sangre">
-                    <option value="" disabled selected>Tipo de sangre</option>
-                    <option value="A+">A+</option>
-                    <option value="A-">A-</option>
-                    <option value="B+">B+</option>
-                    <option value="B-">B-</option>
-                    <option value="O+">O+</option>
-                    <option value="O-">O-</option>
-                    <option value="AB+">AB+</option>
-                    <option value="AB-">AB-</option>
-                </select>
-            </div>
+           
             <div class="mb-3">
                 <select formControlName="Eps" class="form-select" id="tipo_sangre" name="tipo_sangre">
                     <option value="" disabled selected>Seleccione una eps</option>
@@ -106,6 +76,3 @@ margin-top:-240px;
         </form>
     </div>
 </div>
-
-
-

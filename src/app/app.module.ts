@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,6 +10,10 @@ import { RegistroPacienteComponent } from './pagina/registro-paciente/registro-p
 import { LoginPacienteComponent } from './pagina/login-paciente/login-paciente.component';
 import { RegistroMedicoComponent } from './pagina/registro-medico/registro-medico.component';
 import { AgendarCitaComponent } from './pagina/agendar-cita/agendar-cita.component';
+import { InicioPacienteComponent } from './pagina/inicio-paciente/inicio-paciente.component';
+import { InicioAdministradorComponent } from './pagina/inicio-administrador/inicio-administrador.component';
+import { InicioMedicoComponent } from './pagina/inicio-medico/inicio-medico.component';
+import { ActualizacionDatosComponent } from './pagina/actualizacion-datos/actualizacion-datos.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +24,16 @@ import { AgendarCitaComponent } from './pagina/agendar-cita/agendar-cita.compone
     LoginPacienteComponent,
     RegistroMedicoComponent,
     AgendarCitaComponent,
+    InicioPacienteComponent,
+    InicioAdministradorComponent,
+    InicioMedicoComponent,
+    ActualizacionDatosComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
