@@ -10,8 +10,10 @@ import { InicioPacienteComponent } from './pagina/inicio-paciente/inicio-pacient
 import { InicioAdministradorComponent } from './pagina/inicio-administrador/inicio-administrador.component';
 import { InicioMedicoComponent } from './pagina/inicio-medico/inicio-medico.component';
 import { ActualizacionDatosComponent } from './pagina/actualizacion-datos/actualizacion-datos.component';
+import { CalendarioComponent } from './calendario/calendario.component';
 const routes: Routes = [
 { path: "", component: InicioComponent },
+{ path: "agendarCita", component: CalendarioComponent },
 { path: "loginEmpleado", component: LoginEmpleadoComponent },
 { path: "loginPaciente", component: LoginPacienteComponent },
 { path: "registroPaciente", component: RegistroPacienteComponent },
